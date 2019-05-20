@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dxt-04-Rz8">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Автомобили-->
+        <scene sceneID="b53-JG-Oys">
+            <objects>
+                <tableViewController title="Автомобили" id="dxt-04-Rz8" customClass="CarsTableViewController" customModule="CarsList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lgx-EJ-kTy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <navigationBar key="tableFooterView" contentMode="scaleToFill" id="Nvx-H9-dfZ">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Автомобили" id="PMe-Iu-scu">
+                                    <barButtonItem key="rightBarButtonItem" title="+" id="QR8-3j-FKd">
+                                        <connections>
+                                            <action selector="AddCar:" destination="dxt-04-Rz8" id="BD3-V3-a5y"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <connections>
+                            <outlet property="dataSource" destination="dxt-04-Rz8" id="TmX-r0-OM4"/>
+                            <outlet property="delegate" destination="dxt-04-Rz8" id="vHU-G9-XWn"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="Jmn-So-3g2" kind="presentation" identifier="carsToCar" id="2uW-Az-dNu"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iNg-s4-52r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-675" y="21"/>
+        </scene>
+        <!--Автомобиль-->
+        <scene sceneID="t3r-3I-RO1">
+            <objects>
+                <viewController title="Автомобиль" id="Jmn-So-3g2" customClass="CarViewController" customModule="CarsList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8vB-6x-VZJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWq-lE-AdJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Автомобиль" id="qlq-vC-Wj4">
+                                        <barButtonItem key="leftBarButtonItem" title="Отмена" id="Wnl-Up-obS">
+                                            <connections>
+                                                <action selector="cancel:" destination="Jmn-So-3g2" id="uBb-r2-mTj"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Сохранить" id="6CA-Ve-1Uq">
+                                            <connections>
+                                                <action selector="save:" destination="Jmn-So-3g2" id="GxU-7i-TWV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Модель" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iB-vV-NXi">
+                                <rect key="frame" x="20" y="117" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Класс" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgr-eA-T9M">
+                                <rect key="frame" x="20" y="155" width="48" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Производитель" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cv6-Kw-r8k">
+                                <rect key="frame" x="20" y="193" width="125" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тип" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgO-ef-I9e">
+                                <rect key="frame" x="20" y="231" width="30" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Год выпуска" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzF-ko-tO6">
+                                <rect key="frame" x="20" y="269" width="99" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kno-OO-ict">
+                                <rect key="frame" x="151" y="108" width="243" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ModelText" label="Модель"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nU3-Dx-TKp">
+                                <rect key="frame" x="151" y="146" width="243" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="KlassText" label="Модель"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ba9-IA-eMm">
+                                <rect key="frame" x="151" y="184" width="243" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ProducerText" label="Модель"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2vq-IL-BxS">
+                                <rect key="frame" x="151" y="222" width="243" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="TypeText" label="Модель"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VL1-Fs-ivL">
+                                <rect key="frame" x="151" y="260" width="243" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="YearText" label="Модель"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ba9-IA-eMm" firstAttribute="leading" secondItem="Cv6-Kw-r8k" secondAttribute="trailing" constant="6" id="8gr-cY-3xy"/>
+                            <constraint firstItem="2vq-IL-BxS" firstAttribute="leading" secondItem="J9h-Ej-uln" secondAttribute="leading" constant="151" id="AZI-LN-UN0"/>
+                            <constraint firstItem="J9h-Ej-uln" firstAttribute="trailing" secondItem="Ba9-IA-eMm" secondAttribute="trailing" constant="20" id="DYY-ec-FEM"/>
+                            <constraint firstItem="J9h-Ej-uln" firstAttribute="trailing" secondItem="Kno-OO-ict" secondAttribute="trailing" constant="20" id="E2e-Xv-zvF"/>
+                            <constraint firstItem="5iB-vV-NXi" firstAttribute="leading" secondItem="J9h-Ej-uln" secondAttribute="leading" constant="20" id="Efu-eS-HRw"/>
+                            <constraint firstItem="kgO-ef-I9e" firstAttribute="leading" secondItem="J9h-Ej-uln" secondAttribute="leading" constant="20" id="Iz4-9H-uwi"/>
+                            <constraint firstItem="2vq-IL-BxS" firstAttribute="top" secondItem="Ba9-IA-eMm" secondAttribute="bottom" constant="8" id="J7k-1Q-0PO"/>
+                            <constraint firstItem="xgr-eA-T9M" firstAttribute="top" secondItem="5iB-vV-NXi" secondAttribute="bottom" constant="17" id="Jsg-PY-Wf3"/>
+                            <constraint firstItem="J9h-Ej-uln" firstAttribute="trailing" secondItem="2vq-IL-BxS" secondAttribute="trailing" constant="20" id="LKr-p7-Ge8"/>
+                            <constraint firstItem="J9h-Ej-uln" firstAttribute="trailing" secondItem="VL1-Fs-ivL" secondAttribute="trailing" constant="20" id="NQt-b5-JAQ"/>
+                            <constraint firstItem="Cv6-Kw-r8k" firstAttribute="top" secondItem="xgr-eA-T9M" secondAttribute="bottom" constant="17" id="RX3-3F-fS9"/>
+                            <constraint firstItem="Kno-OO-ict" firstAttribute="top" secondItem="fWq-lE-AdJ" secondAttribute="bottom" constant="20" id="S87-CE-mRz"/>
+                            <constraint firstItem="5iB-vV-NXi" firstAttribute="top" secondItem="fWq-lE-AdJ" secondAttribute="bottom" constant="29" id="SLq-tA-AOp"/>
+                            <constraint firstAttribute="trailing" secondItem="fWq-lE-AdJ" secondAttribute="trailing" id="V2w-R0-WNU"/>
+                            <constraint firstItem="nU3-Dx-TKp" firstAttribute="top" secondItem="Kno-OO-ict" secondAttribute="bottom" constant="8" symbolic="YES" id="X6Q-wk-8Xn"/>
+                            <constraint firstItem="Cv6-Kw-r8k" firstAttribute="leading" secondItem="J9h-Ej-uln" secondAttribute="leading" constant="20" id="ai3-aA-Sem"/>
+                            <constraint firstItem="VL1-Fs-ivL" firstAttribute="top" secondItem="2vq-IL-BxS" secondAttribute="bottom" constant="8" symbolic="YES" id="bkP-LL-18H"/>
+                            <constraint firstItem="fzF-ko-tO6" firstAttribute="leading" secondItem="J9h-Ej-uln" secondAttribute="leading" constant="20" id="cS4-ir-44W"/>
+                            <constraint firstItem="xgr-eA-T9M" firstAttribute="leading" secondItem="J9h-Ej-uln" secondAttribute="leading" constant="20" id="fcv-gy-9gA"/>
+                            <constraint firstItem="fWq-lE-AdJ" firstAttribute="leading" secondItem="8vB-6x-VZJ" secondAttribute="leading" id="fl0-WQ-TLS"/>
+                            <constraint firstItem="fWq-lE-AdJ" firstAttribute="top" secondItem="J9h-Ej-uln" secondAttribute="top" id="gKE-wY-ftT"/>
+                            <constraint firstItem="VL1-Fs-ivL" firstAttribute="leading" secondItem="8vB-6x-VZJ" secondAttribute="leadingMargin" constant="131" id="gz4-TS-lOh"/>
+                            <constraint firstItem="fzF-ko-tO6" firstAttribute="top" secondItem="kgO-ef-I9e" secondAttribute="bottom" constant="17" id="hEm-ll-ofU"/>
+                            <constraint firstItem="Ba9-IA-eMm" firstAttribute="top" secondItem="nU3-Dx-TKp" secondAttribute="bottom" constant="8" symbolic="YES" id="jw6-Xd-Of7"/>
+                            <constraint firstItem="Ba9-IA-eMm" firstAttribute="leading" secondItem="J9h-Ej-uln" secondAttribute="leading" constant="151" id="pbl-VP-D25"/>
+                            <constraint firstItem="nU3-Dx-TKp" firstAttribute="leading" secondItem="J9h-Ej-uln" secondAttribute="leading" constant="151" id="sLz-a4-lrT"/>
+                            <constraint firstItem="J9h-Ej-uln" firstAttribute="trailing" secondItem="nU3-Dx-TKp" secondAttribute="trailing" constant="20" id="tCL-PX-iy0"/>
+                            <constraint firstItem="kgO-ef-I9e" firstAttribute="top" secondItem="Cv6-Kw-r8k" secondAttribute="bottom" constant="17" id="tnH-Q3-efZ"/>
+                            <constraint firstItem="Kno-OO-ict" firstAttribute="leading" secondItem="J9h-Ej-uln" secondAttribute="leading" constant="151" id="zFZ-j4-taI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J9h-Ej-uln"/>
+                    </view>
+                    <connections>
+                        <outlet property="ModelText" destination="Kno-OO-ict" id="xZ6-OP-hwp"/>
+                        <outlet property="klassText" destination="nU3-Dx-TKp" id="mZb-5I-H7W"/>
+                        <outlet property="modelText" destination="Kno-OO-ict" id="Ijo-q6-5KE"/>
+                        <outlet property="producerText" destination="Ba9-IA-eMm" id="WXJ-yS-bz0"/>
+                        <outlet property="typeText" destination="2vq-IL-BxS" id="JZY-4z-yeB"/>
+                        <outlet property="yearText" destination="VL1-Fs-ivL" id="nRT-vE-8LS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eqP-7a-5rS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.884057971014496" y="18.75"/>
+        </scene>
+    </scenes>
+</document>
